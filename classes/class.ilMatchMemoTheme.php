@@ -103,7 +103,7 @@ class ilMatchMemoTheme
 	
 	public function getAvailablePools()
 	{
-		if (count($this->availablePools)) return $this->availablePools;
+		if (is_array($this->availablePools) && count($this->availablePools))  return $this->availablePools;
 		$this->plugin->includeClass("class.ilObjMatchMemoAccess.php");
 		$this->availablePools = ilObjMatchMemoAccess::_getAvailablePools();
 		return $this->availablePools;
